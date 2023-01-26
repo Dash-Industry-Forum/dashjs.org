@@ -1,0 +1,34 @@
+{
+	"social": {
+		"github": "https://github.com/Dash-Industry-Forum/dash.js",
+		"reference_player": "https://reference.dashif.org/dash.js/nightly/samples/dash-if-reference-player/index.html",
+		"slack": "https://dashif.slack.com/archives/C11R69M96",
+		"twitter": "https://twitter.com/dash_if",
+		"linkedin": "https://www.linkedin.com/groups/12427371/",
+		"google": "https://groups.google.com/g/dashjs"
+	},
+	"menu": {
+		"Samples": {
+			"link": "https://reference.dashif.org/dash.js/nightly/samples/"
+		},
+		"Releases": {
+			"link": "https://github.com/Dash-Industry-Forum/dash.js/releases"
+		},
+		"Documentation": {
+			"link": "https://cdn.dashjs.org/latest/jsdoc/index.html"
+		},
+		"Awards": {
+			"link": "https://dashif.org/news/dash-js-award-2021/"
+		},
+		"Meetings": {
+			"items": {
+				"Face to Face": {
+					"link": "https://dashif.org/events/member/"
+				},
+				"Monthly Calls (minutes)": {
+					"link": "https://github.com/Dash-Industry-Forum/dash.js/wiki/Meeting-Minutes"
+				}
+			}
+		}
+	}
+}

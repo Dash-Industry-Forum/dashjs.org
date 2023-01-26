@@ -1,0 +1,33 @@
+@tailwind base;
+
+@layer base {
+	ol,
+	ul {
+		list-style: revert;
+	}
+}
+
+@tailwind components;
+@tailwind utilities;
+
+body {
+	/* Background */
+	@apply bg-paper dark:bg-dark-paper;
+
+	/* Text */
+	@apply text-black dark:text-white;
+
+	/* Box Sizing */
+	@apply box-border;
+
+	/* Font */
+	@apply antialiased;
+}
+
+.truncate-content {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
