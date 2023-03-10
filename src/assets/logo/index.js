@@ -14,6 +14,7 @@ import Akamai from "./used-by/akamai.svg";
 import AWSElemental from "./used-by/aws-elemental.svg";
 import Broadpeak from "./used-by/broadpeak.svg";
 import System73 from "./used-by/system73.svg";
+import Dolby from "./used-by/dolby.svg"
 
 export function getSponsors() {
 	return [
@@ -50,6 +51,12 @@ export function getUsedBy() {
 			c: System73,
 			name: "System73",
 			url: "https://www.system73.com",
+			svg: true,
+		},
+		{
+			c: Dolby,
+			name: "Dolby",
+			url: "https://www.dolby.com/",
 			svg: true,
 		},
 	];
