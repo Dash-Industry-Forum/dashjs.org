@@ -126,7 +126,7 @@ function Appearance({ className = "", minimal }) {
 
 	return (
 		<div
-			className={`mt-6 flex w-full max-w-xs cursor-pointer flex-row items-center justify-between rounded-md bg-[#0000000D] py-3 px-4 text-xs dark:bg-[#FFFFFF0D] ${className}`}
+			className={`flex w-full max-w-xs cursor-pointer flex-row items-center justify-between rounded-md bg-[#0000000D] max-lg:py-3 max-lg:px-4 max-md:mt-6 text-xs dark:bg-[#FFFFFF0D] ${className}`}
 			onClick={() =>
 				setTheme(resolvedTheme == "dark" ? "light" : "dark")
 			}>

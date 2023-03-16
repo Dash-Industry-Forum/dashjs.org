@@ -62,7 +62,7 @@ export const twitterCollector = async (page) => {
 				(a) => a.textContent
 			);
 			const alt = await tweetDiv.$eval(
-				"div[data-testid='User-Names']",
+				"div[data-testid='User-Name']",
 				(a) => a.innerText
 			);
 			const time = await tweetDiv.$eval(

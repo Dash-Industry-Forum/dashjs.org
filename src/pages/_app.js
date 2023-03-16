@@ -1,6 +1,6 @@
 import { ThemeProvider } from "next-themes";
 
-import { Inter } from "@next/font/google";
+import { Inter } from "next/font/google";
 
 import { Breakpoint, Footer, Nav } from "../components";
 import "../styles/github-md.css";
