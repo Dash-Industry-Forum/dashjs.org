@@ -15,6 +15,7 @@ import AWSElemental from "./used-by/aws-elemental.svg";
 import Broadpeak from "./used-by/broadpeak.svg";
 import System73 from "./used-by/system73.svg";
 import Dolby from "./used-by/dolby.svg"
+import BBC from "./used-by/bbc.svg"
 
 export function getSponsors() {
 	return [
@@ -57,6 +58,12 @@ export function getUsedBy() {
 			c: Dolby,
 			name: "Dolby",
 			url: "https://www.dolby.com/",
+			svg: true,
+		},
+		{
+			c: BBC,
+			name: "BBC",
+			url: "https://www.bbc.com/",
 			svg: true,
 		},
 	];
