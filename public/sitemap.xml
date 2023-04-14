@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://dashjs.netlify.app/</loc>
+        <loc>https://dashjs.org/</loc>
     </url>
     <url>
-        <loc>https://dashjs.netlify.app/get-started</loc>
+        <loc>https://dashjs.org/get-started</loc>
     </url>
     <url>
-        <loc>https://dashjs.netlify.app/why-dashjs</loc>
+        <loc>https://dashjs.org/why-dashjs</loc>
     </url>
 </urlset>

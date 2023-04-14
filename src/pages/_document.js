@@ -44,9 +44,9 @@ export default function Document() {
 				/>
 				<meta name="author" content="Deniz Ugur" />
 				<meta name="google" content="nositelinkssearchbox" />
-				<link rel="canonical" href="https://dashjs.netlify.app" />
+				<link rel="canonical" href="https://dashjs.org" />
 
-				<meta property="og:url" content="https://dashjs.netlify.app" />
+				<meta property="og:url" content="https://dashjs.org" />
 				<meta property="og:title" content="dash.js" />
 				<meta
 					property="og:description"
@@ -54,7 +54,7 @@ export default function Document() {
 				/>
 				<meta
 					property="og:image"
-					content="https://dashjs.netlify.app/dashif-logo.png"
+					content="https://dashjs.org/dashif-logo.png"
 				/>
 				<meta property="og:site_name" content="dash.js" />
 				<meta property="og:locale" content="en_US" />
@@ -68,7 +68,7 @@ export default function Document() {
 				/>
 				<meta
 					name="twitter:image"
-					content="https://dashjs.netlify.app/dashif-logo.png"
+					content="https://dashjs.org/dashif-logo.png"
 				/>
 			</Head>
 			<body>
