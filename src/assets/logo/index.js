@@ -16,6 +16,7 @@ import Broadpeak from "./used-by/broadpeak.svg";
 import System73 from "./used-by/system73.svg";
 import Dolby from "./used-by/dolby.svg"
 import BBC from "./used-by/bbc.svg"
+import Eyevinn from "./used-by/eyevinn.svg"
 
 export function getSponsors() {
 	return [
@@ -64,6 +65,12 @@ export function getUsedBy() {
 			c: BBC,
 			name: "BBC",
 			url: "https://www.bbc.com/",
+			svg: true,
+		},
+		{
+			c: Eyevinn,
+			name: "Eyevinn",
+			url: "https://www.eyevinntechnology.se/",
 			svg: true,
 		},
 	];
