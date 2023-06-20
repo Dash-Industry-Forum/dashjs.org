@@ -101,7 +101,7 @@ function NewsComponent({ type, title, caption, alt, retweet }) {
 				}`}>
 				{type === "github" ? <FaGithub /> : <FaTwitter />}
 			</span>
-			<div className="ml-3 flex flex-col gap-1 text-sm text-slate-700 dark:text-slate-100 lg:justify-between">
+			<div className="ml-3 flex min-w-0 flex-col gap-1 text-sm text-slate-700 dark:text-slate-100 lg:justify-between">
 				<span className="text-xs font-bold uppercase">{title}</span>
 				<span className="text-md truncate-content">{caption}</span>
 				<span className="inline-flex items-center gap-1 text-xs font-bold text-slate-600 dark:text-gray-400">
@@ -135,7 +135,7 @@ function News() {
 
 	return (
 		<section className="mb-12 flex w-full px-4 pt-12">
-			<div className="mx-auto flex max-w-7xl flex-col justify-center gap-6 lg:flex-row">
+			<div className="mx-auto flex w-full max-w-7xl flex-col justify-center gap-6 lg:flex-row">
 				<NewsFeed
 					data={data.news.twitter}
 					title="Latest news from Twitter">

@@ -10,29 +10,29 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"dashjs": "^4.6.0",
+		"dashjs": "^4.7.0",
 		"hamburger-react": "^2.5.0",
-		"media-chrome": "^0.18.8",
-		"next": "13.2.4",
+		"media-chrome": "^1.1.0",
+		"next": "13.4.6",
 		"next-themes": "^0.2.1",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-icons": "^4.8.0",
+		"react-icons": "^4.9.0",
 		"usehooks-ts": "^2.9.1"
 	},
 	"devDependencies": {
-		"@next/bundle-analyzer": "^13.2.4",
-		"@svgr/webpack": "^6.5.1",
+		"@next/bundle-analyzer": "^13.4.6",
+		"@svgr/webpack": "^8.0.1",
 		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
 		"autoprefixer": "^10.4.14",
 		"cheerio": "^1.0.0-rc.12",
-		"eslint": "8.36.0",
-		"eslint-config-next": "13.2.4",
+		"eslint": "8.43.0",
+		"eslint-config-next": "13.4.6",
 		"node-fetch": "^3.3.1",
-		"postcss": "^8.4.21",
-		"prettier-plugin-tailwindcss": "^0.2.4",
-		"puppeteer": "^19.7.5",
-		"sharp": "^0.31.3",
-		"tailwindcss": "^3.2.7"
+		"postcss": "^8.4.24",
+		"prettier-plugin-tailwindcss": "^0.3.0",
+		"puppeteer": "^20.7.2",
+		"sharp": "^0.32.1",
+		"tailwindcss": "^3.3.2"
 	}
 }

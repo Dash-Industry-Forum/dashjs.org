@@ -7,6 +7,7 @@ import { nFormatter } from "./utils";
 const crawl = async (type) => {
 	const browser = await puppeteer.launch({
 		defaultViewport: { width: 1920, height: 1080 },
+		headless: "new",
 	});
 	const page = await browser.newPage();
 	await page.setUserAgent(
@@ -30,7 +31,7 @@ const crawl = async (type) => {
 };
 
 const fetchData = async () => {
-	if (process.env.NODE_ENV === "development")
+	if (process.env.NODE_ENV !== "development")
 		return {
 			npm: { downloads: "236.5k" },
 			github: {
