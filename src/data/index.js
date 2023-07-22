@@ -31,7 +31,7 @@ const crawl = async (type) => {
 };
 
 const fetchData = async () => {
-	if (process.env.NODE_ENV !== "development")
+	if (process.env.NODE_ENV === "development")
 		return {
 			npm: { downloads: "236.5k" },
 			github: {
