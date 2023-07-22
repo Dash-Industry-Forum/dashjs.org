@@ -116,7 +116,7 @@ function NewsComponent({ type, title, caption, alt, retweet }) {
 function NewsFeed({ data, title, children }) {
 	const isOneColumn = useMediaQuery("(max-width: 1024px)");
 	return (
-		<div className="mt-6 flex flex-1 flex-col items-center lg:mt-0">
+		<div className="mt-6 flex flex-1 flex-col max-w-2xl items-center lg:mt-0">
 			<h2 className="mb-2 text-sm font-bold uppercase text-black dark:text-white lg:mb-4">
 				{title}
 			</h2>
@@ -136,18 +136,6 @@ function News() {
 	return (
 		<section className="mb-12 flex w-full px-4 pt-12">
 			<div className="mx-auto flex w-full max-w-7xl flex-col justify-center gap-6 lg:flex-row">
-				<NewsFeed
-					data={data.news.twitter}
-					title="Latest news from Twitter">
-					<h2 className="mt-2 text-sm font-medium text-black dark:text-white">
-						More news on
-					</h2>
-					<div className="mt-2 flex flex-row gap-4 lg:mt-6">
-						<Button href="https://twitter.com/dash_if">
-							Twitter Feed
-						</Button>
-					</div>
-				</NewsFeed>
 				<NewsFeed
 					data={data.news.github}
 					title="Latest updates from GitHub">

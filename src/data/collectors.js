@@ -51,42 +51,6 @@ export const githubCollector = async (page) => {
 	return { issues, stats: { forks: forkCount, stars: starCount } };
 };
 
-export const twitterCollector = async (page) => {
-	await page.waitForSelector("article");
-	const tweetDivs = await page.$$("article");
-
-	const tweets = await Promise.all(
-		tweetDivs.map(async (tweetDiv) => {
-			const caption = await tweetDiv.$eval(
-				"div[data-testid='tweetText']",
-				(a) => a.textContent
-			);
-			const alt = await tweetDiv.$eval(
-				"div[data-testid='User-Name']",
-				(a) => a.innerText
-			);
-			const time = await tweetDiv.$eval(
-				"time",
-				(a) => a.attributes.datetime.value
-			);
-
-			const retweet =
-				(await tweetDiv.$("span[data-testid='socialContext']")) !==
-				null;
-
-			return {
-				type: "twitter",
-				title: "feed",
-				caption,
-				alt,
-				time,
-				...(retweet && { retweet: true }),
-			};
-		})
-	);
-	return tweets;
-};
-
 export const npmCollector = async () => {
 	const endpoint = `https://api.npmjs.org/downloads/point/${DOWNLOAD_COUNT_PERIOD}/${NPM_NAME}`;
 	const res = await fetch(endpoint);

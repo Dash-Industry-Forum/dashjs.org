@@ -1,7 +1,7 @@
 import puppeteer from "puppeteer";
 
-import { githubCollector, npmCollector, twitterCollector } from "./collectors";
-import { GITHUB_ISSUES_URL, LIMIT, TWIITER_FEED_URL } from "./constants";
+import { githubCollector, npmCollector } from "./collectors";
+import { GITHUB_ISSUES_URL, LIMIT } from "./constants";
 import { nFormatter } from "./utils";
 
 const crawl = async (type) => {
@@ -16,13 +16,11 @@ const crawl = async (type) => {
 
 	let url = null;
 	if (type === Type.GitHub) url = GITHUB_ISSUES_URL;
-	else if (type === Type.Twitter) url = TWIITER_FEED_URL;
 
 	if (url) await page.goto(url, { waitUntil: "networkidle2" });
 
 	let content = null;
 	if (type === Type.GitHub) content = await githubCollector(page);
-	else if (type === Type.Twitter) content = await twitterCollector(page);
 	else if (type === Type.NPM) content = await npmCollector(page);
 
 	await browser.close();
@@ -39,14 +37,6 @@ const fetchData = async () => {
 				forks: "4.5k",
 			},
 			news: {
-				twitter: [
-					{
-						type: "twitter",
-						title: "feed",
-						caption: "caption",
-						alt: "alt",
-					},
-				],
 				github: [
 					{
 						type: "github",
@@ -58,9 +48,8 @@ const fetchData = async () => {
 			},
 		};
 
-	const [github, twitter, npm] = await Promise.all([
+	const [github, npm] = await Promise.all([
 		crawl(Type.GitHub),
-		crawl(Type.Twitter),
 		crawl(Type.NPM),
 	]);
 
@@ -70,7 +59,6 @@ const fetchData = async () => {
 		},
 		github: github.stats,
 		news: {
-			twitter: twitter.slice(0, LIMIT.twitter),
 			github: github.issues.slice(0, LIMIT.github),
 		},
 	};
@@ -78,7 +66,6 @@ const fetchData = async () => {
 
 const Type = {
 	GitHub: "github",
-	Twitter: "twitter",
 	NPM: "npm",
 };
 
