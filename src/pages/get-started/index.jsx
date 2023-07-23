@@ -26,8 +26,8 @@ export async function getStaticProps() {
 	const markdown = await Promise.all(
 		pages.map(async (page) => {
 			const response = await fetch(page);
-			const text = await response.text();
-			const $ = load(text);
+			const payload = await response.json();
+			const $ = load(payload.payload.blob.richText);
 			$(".markdown-body table").first().remove();
 			const content = $(".markdown-body").html();
 			return content;
