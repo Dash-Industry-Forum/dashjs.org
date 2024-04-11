@@ -14,9 +14,9 @@ import Akamai from "./used-by/akamai.svg";
 import AWSElemental from "./used-by/aws-elemental.svg";
 import Broadpeak from "./used-by/broadpeak.svg";
 import System73 from "./used-by/system73.svg";
-import Dolby from "./used-by/dolby.svg"
-import BBC from "./used-by/bbc.svg"
-import Eyevinn from "./used-by/eyevinn.svg"
+import Dolby from "./used-by/dolby.svg";
+import BBC from "./used-by/bbc.svg";
+import Eyevinn from "./used-by/eyevinn.svg";
 
 export function getSponsors() {
 	return [
@@ -24,8 +24,8 @@ export function getSponsors() {
 			c: DASHIF,
 			name: "DASH Industry Forum",
 			url: "https://www.dashif.org",
-			svg: true,
-		},
+			svg: true
+		}
 	];
 }
 
@@ -35,44 +35,44 @@ export function getUsedBy() {
 			c: Akamai,
 			name: "Akamai",
 			url: "http://www.akamai.com",
-			svg: true,
+			svg: true
 		},
 		{
 			c: AWSElemental,
 			name: "AWS Elemental",
 			url: "https://www.elemental.com/",
-			svg: true,
+			svg: true
 		},
 		{
 			c: Broadpeak,
 			name: "Broadpeak",
 			url: "https://www.broadpeak.tv",
-			svg: true,
+			svg: true
 		},
 		{
 			c: System73,
 			name: "System73",
 			url: "https://www.system73.com",
-			svg: true,
+			svg: true
 		},
 		{
 			c: Dolby,
 			name: "Dolby",
 			url: "https://www.dolby.com/",
-			svg: true,
+			svg: true
 		},
 		{
 			c: BBC,
 			name: "BBC",
 			url: "https://www.bbc.com/",
-			svg: true,
+			svg: true
 		},
 		{
 			c: Eyevinn,
 			name: "Eyevinn",
 			url: "https://www.eyevinntechnology.se/",
-			svg: true,
-		},
+			svg: true
+		}
 	];
 }
 
@@ -82,18 +82,18 @@ export function getContributors() {
 		{
 			c: Brightcove,
 			name: "Brightcove",
-			url: "https://www.brightcove.com",
+			url: "https://www.brightcove.com"
 		},
 		{
 			c: Cablelabs,
 			name: "CableLabs",
 			url: "http://www.cablelabs.com",
-			svg: true,
+			svg: true
 		},
 		{
 			c: Logo4,
 			name: "Digital Primates",
-			url: "http://www.digitalprimates.net",
+			url: "http://www.digitalprimates.net"
 		},
 		{ c: Logo5, name: "Edgeware", url: "http://www.edgeware.tv" },
 		{ c: Logo6, name: "Epic Labs", url: "https://www.epiclabs.io/" },
@@ -101,30 +101,36 @@ export function getContributors() {
 			c: Fraunhofer,
 			name: "Fraunhofer Institute For Open Communication Systems",
 			url: "https://www.fokus.fraunhofer.de/go/fame",
-			svg: true,
+			svg: true
 		},
 		{ c: MSOpenTech, name: "Microsoft", url: "http://msopentech.com" },
 		{
 			c: Nus,
 			name: "National University of Singapore",
-			url: "https://nus.edu.sg",
+			url: "https://nus.edu.sg"
 		},
 		{
 			c: Ozyegin,
 			name: "Ozyegin University",
 			url: "https://www.ozyegin.edu.tr",
-			svg: true,
+			svg: true
 		},
 		{
 			c: UnifiedStreaming,
 			name: "Unified Streaming",
-			url: "https://www.unified-streaming.com",
+			url: "https://www.unified-streaming.com"
 		},
 		{
 			c: Youtube,
 			name: "Youtube",
 			url: "http://www.youtube.com",
-			svg: true,
+			svg: true
 		},
+		{
+			c: Broadpeak,
+			name: "Broadpeak",
+			url: "https://www.broadpeak.tv",
+			svg: true
+		}
 	];
 }
