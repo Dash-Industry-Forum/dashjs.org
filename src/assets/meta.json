@@ -17,6 +17,9 @@
 		"Documentation": {
 			"link": "https://dashif.org/dash.js/"
 		},
+		"API": {
+			"link": "https://cdn.dashjs.org/latest/jsdoc/index.html"
+		},
 		"Awards": {
 			"link": "https://dashif.org/news/dash-js-award-2021/"
 		},
