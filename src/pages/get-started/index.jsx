@@ -20,8 +20,8 @@ export default function Index({ title, description, html }) {
 
 export async function getStaticProps() {
 	const pages = [
-		"https://github.com/dsilhavy/dashjs-jekyll-documentation/blob/master/pages/quickstart/installation.md",
-		"https://github.com/dsilhavy/dashjs-jekyll-documentation/blob/master/pages/quickstart/setup.md",
+		"https://github.com/Dash-Industry-Forum/dash.js/blob/gh-pages/pages/quickstart/installation.md",
+		"https://github.com/Dash-Industry-Forum/dash.js/blob/gh-pages/pages/quickstart/setup.md",
 	];
 	const markdown = await Promise.all(
 		pages.map(async (page) => {
