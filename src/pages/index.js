@@ -72,7 +72,11 @@ function Entry() {
 						&nbsp;now!
 					</Button>
 					<div className="flex gap-4">
-						<Button href="/get-started">Get Started</Button>
+						<Button
+							className="hidden sm:block"
+							href={meta.social.get_started}>
+							Get Started
+						</Button>
 						<Button
 							className="hidden sm:block"
 							href={meta.social.github}>

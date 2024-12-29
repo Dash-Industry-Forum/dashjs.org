@@ -17,30 +17,3 @@ export default function Index({ title, description, html }) {
 		</>
 	);
 }
-
-export async function getStaticProps() {
-	const pages = [
-		"https://github.com/Dash-Industry-Forum/dash.js/blob/gh-pages/pages/quickstart/installation.md",
-		"https://github.com/Dash-Industry-Forum/dash.js/blob/gh-pages/pages/quickstart/setup.md",
-	];
-	const markdown = await Promise.all(
-		pages.map(async (page) => {
-			const response = await fetch(page);
-			const payload = await response.json();
-			const $ = load(payload.payload.blob.richText);
-			$(".markdown-body table").first().remove();
-			const content = $(".markdown-body").html();
-			return content;
-		})
-	);
-	const html = markdown.join("");
-
-	return {
-		props: {
-			title: "Get Started",
-			description: "Get Started with dash.js",
-			content: true,
-			html,
-		},
-	};
-}
