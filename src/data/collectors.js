@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import { DOWNLOAD_COUNT_PERIOD, NPM_NAME } from "./constants";
 
 export const githubCollector = async (page) => {
-	await page.waitForSelector("div.js-navigation-container > div");
+	//await page.waitForSelector("div.js-navigation-container > div", { timeout: 60000 });
 	const issueDivs = await page.$$("pierce/div.js-navigation-container > div");
 
 	const forkCount = await page.$eval(
@@ -35,7 +35,7 @@ export const githubCollector = async (page) => {
 			const combined = [
 				alt.substring(0, alt.indexOf("  ")),
 				timeRelative,
-				alt.substring(alt.indexOf("  ") + 2, alt.length),
+				alt.substring(alt.indexOf("  ") + 2, alt.length)
 			].join(" ");
 
 			return {
@@ -43,7 +43,7 @@ export const githubCollector = async (page) => {
 				title: "issue",
 				caption,
 				alt: combined,
-				time,
+				time
 			};
 		})
 	);
