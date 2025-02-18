@@ -11,6 +11,7 @@ import { getContributors, getSponsors, getUsedBy } from "../assets/logo";
 import meta from "../assets/meta.json";
 import { Brands, Button, PlayerLogo } from "../components";
 import fetchData from "../data";
+import { getRelativeTime } from "../data/utils";
 
 const DataContext = createContext();
 
@@ -89,14 +90,17 @@ function Entry() {
 	);
 }
 
-function NewsComponent({ type, title, caption, alt, retweet }) {
+function NewsComponent({ type, title, caption, alt, url, time, retweet }) {
 	return (
 		<div
 			className={`flex w-full flex-grow flex-row rounded-md border-l-8 bg-neutral-100 p-3 shadow-md dark:bg-dark-paper-100 sm:max-lg:w-9/12 ${
 				type === "twitter"
 					? "border-twitter dark:border-twitter-dark"
 					: "border-github dark:border-github-dark"
-			}`}>
+			}`}
+			onClick={() => window.open(url)}
+			key={url}
+			role="button">
 			<span
 				className={`self-center text-2xl ${
 					type === "twitter"
@@ -110,7 +114,11 @@ function NewsComponent({ type, title, caption, alt, retweet }) {
 				<span className="text-md truncate-content">{caption}</span>
 				<span className="inline-flex items-center gap-1 text-xs font-bold text-slate-600 dark:text-gray-400">
 					{retweet && <FaRetweet />}
-					{alt}
+					<span>{alt}</span>
+					<b>&mdash;</b>
+					{time && (
+						<span>{getRelativeTime(time)}</span>
+					)}
 				</span>
 			</div>
 		</div>

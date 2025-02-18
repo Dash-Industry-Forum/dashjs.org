@@ -19,3 +19,28 @@ export function nFormatter(num, digits) {
 		? (num / item.value).toFixed(digits).replace(rx, "$1") + item.symbol
 		: "0";
 }
+
+export function getRelativeTime(dateString) {
+	const now = new Date();
+	const date = new Date(dateString);
+	const diffInMilliseconds = date.getTime() - now.getTime();
+	const diffInSeconds = Math.round(diffInMilliseconds / 1000);
+
+	const units = {
+		year: 31536000,
+		month: 2592000,
+		day: 86400,
+		hour: 3600,
+		minute: 60,
+		second: 1,
+	};
+
+	for (const unit in units) {
+		const unitValue = units[unit];
+		if (Math.abs(diffInSeconds) >= unitValue) {
+			const time = Math.round(diffInSeconds / unitValue);
+			const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
+			return rtf.format(time, unit);
+		}
+	}
+}

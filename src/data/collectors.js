@@ -1,52 +1,32 @@
 import fetch from "node-fetch";
 
-import { DOWNLOAD_COUNT_PERIOD, NPM_NAME } from "./constants";
+import { DOWNLOAD_COUNT_PERIOD, GITHUB_REPO, NPM_NAME } from "./constants";
 
-export const githubCollector = async (page) => {
-	//await page.waitForSelector("div.js-navigation-container > div", { timeout: 60000 });
-	const issueDivs = await page.$$("pierce/div.js-navigation-container > div");
+export const githubCollector = async () => {
+	const base = `https://api.github.com/repos/${GITHUB_REPO}`;
+	const headers = {
+		Accept: "application/vnd.github.v3+json",
+		Authorization: `token ${process.env.GITHUB_TOKEN}`,
+	};
+	if (!process.env.GITHUB_TOKEN) throw new Error("GITHUB_TOKEN is not set");
 
-	const forkCount = await page.$eval(
-		"#repo-network-counter",
-		(a) => a.innerText
-	);
+	// Request issues
+	const issuesRes = await fetch(`${base}/issues`, { headers });
+	const issues = (await issuesRes.json()).map((issue) => {
+		return {
+			type: "github",
+			title: issue.title,
+			caption: issue.body,
+			alt: `Opened by ${issue.user.login}`,
+			url: issue.html_url,
+			time: issue.created_at,
+		};
+	});
 
-	const starCount = await page.$eval(
-		"#repo-stars-counter-star",
-		(a) => a.innerText
-	);
-
-	const issues = await Promise.all(
-		issueDivs.map(async (issueDiv) => {
-			const caption = await issueDiv.$eval(
-				".markdown-title",
-				(a) => a.innerText
-			);
-			const alt = await issueDiv.$eval(".opened-by", (a) => a.innerText);
-			const timeRelative = await issueDiv.$eval(
-				".opened-by relative-time",
-				(a) => a.shadowRoot.innerHTML
-			);
-			const time = await issueDiv.$eval(
-				".opened-by relative-time",
-				(a) => a.attributes.datetime.value
-			);
-
-			const combined = [
-				alt.substring(0, alt.indexOf("  ")),
-				timeRelative,
-				alt.substring(alt.indexOf("  ") + 2, alt.length)
-			].join(" ");
-
-			return {
-				type: "github",
-				title: "issue",
-				caption,
-				alt: combined,
-				time
-			};
-		})
-	);
+	// Request stats
+	const statsRes = await fetch(base, { headers });
+	const { forks_count: forkCount, stargazers_count: starCount } =
+		await statsRes.json();
 
 	return { issues, stats: { forks: forkCount, stars: starCount } };
 };

@@ -20,6 +20,7 @@ permissions:
     contents: read
     pages: write
     id-token: write
+    issues: read
 
 # Allow one concurrent deployment
 concurrency:
@@ -77,6 +78,8 @@ jobs:
               run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
             - name: Build with Next.js
               uses: nick-fields/retry@v2
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
                   timeout_minutes: 3
                   retry_wait_seconds: 10
