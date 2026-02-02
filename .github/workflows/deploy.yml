@@ -54,10 +54,10 @@ jobs:
             - name: Setup Node
               uses: actions/setup-node@v6
               with:
-                  node-version: "latest"
+                  node-version: "20"
                   cache: ${{ steps.detect-package-manager.outputs.manager }}
             - name: Setup Pages
-              uses: actions/configure-pages@v5
+              uses: actions/configure-pages@v2
               with:
                   # Automatically inject basePath in your Next.js configuration file and disable
                   # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
